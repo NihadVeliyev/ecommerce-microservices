@@ -1,5 +1,6 @@
 package msuser.model;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 import msuser.enums.Role;
 import org.hibernate.annotations.CreationTimestamp;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 @Entity
 @Data
 @Table(name = "users")
+@Builder
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,9 +26,6 @@ public class User {
     private LocalDateTime createdAt;
     @UpdateTimestamp
     private LocalDateTime updatedAt;
-
-
-
 
 
 
