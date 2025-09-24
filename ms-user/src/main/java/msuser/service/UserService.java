@@ -6,6 +6,7 @@ import msuser.dto.UserRes;
 import msuser.mapper.UserMapper;
 import msuser.model.User;
 import msuser.repository.UserRepository;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,6 +22,10 @@ public class UserService {
         UserRes userRes=userMapper.toResponse(user);
         return userRes;
 
+    }
+    public UserRes getUserById(Long id){
+        return userMapper.toResponse(userRepository.findById(id)
+                .orElseThrow(()->new UsernameNotFoundException("User not found with the id: "+id)));
     }
 
 
