@@ -16,5 +16,4 @@ public class UserReq {
     private String password;
     @Builder.Default
     private Role role=Role.USER;
-
 }
