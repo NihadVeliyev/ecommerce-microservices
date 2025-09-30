@@ -1,5 +1,4 @@
 package msuser.controller;
-
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import msuser.dto.UserReq;
@@ -8,7 +7,6 @@ import msuser.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
